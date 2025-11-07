@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Portal</title>
+
+    <!-- here is the link to your style.css file  -->
+     <link rel="stylesheet" href="form_style.css">
+
+</head>
+<body>
+    <h1>Fill in the details here</h1>
+
+    <!-- here basically you mention where will the details of your form be sent  -->
+    <form action="/submit.php">
+
+        <!-- We generally keep it stored in div so that its stored in its group together -->
+         <!-- Like here is a div that will store the name of the user  -->
+        <div>
+            <label for="name">Name</label>
+            <!-- Whatever is the label for"written here" same must be written in the input id , this is because having the same name allows for a seamless linking  -->
+            <input id="name" type="text" placeholder="Enter name" required>           
+        </div>
+        
+        <!-- Like here the Phone Num written it is what appears written at the left like the heading something like
+        Phone Num : ________ -->
+        <div>
+            <label for="Phone Numer">Phone Num</label>
+            <input id="Phone Numer" type="number" placeholder="Enter Ph.No.">
+        </div>
+
+        <!-- When you want such that you have to set a limit to the number of characters you can set  -->
+         <div>
+            <label for="pin">Security PIN</label>
+            <input id="pin" type="tel" pattern="[0-9]{4}" maxlength="4" inputmode="numeric" placeholder="Enter 4-digit PIN" required>
+        </div>
+
+        <div>
+            <!-- here a functionality of required is attached which ensures this field is not left blank -->
+            <label for="email">Email ID</label>
+            <input id="email" type="email" placeholder="Enter Email ID" required>
+        </div>
+
+        <div>
+            <label for="pass">Password</label>
+            <input id="pass" type="password" placeholder="Enter your password">
+        </div>
+
+        <div>
+            <label for="date">Date of Birth</label>
+            <input id="date" type="date" placeholder="Enter your DOB">
+        </div>
+        
+        <!-- Creating a drop down based system  -->
+         <div>
+            <label for="Gender">Gender</label>
+            <!-- This select id helps identify that a drop down based system is to be built -->
+            <select id="Gender">
+                <!-- what this disabled selected does is that no one can choose select gender and submit your form  -->
+                <option value="" disabled selected>Select Gender</option>
+
+                <!-- In the form "male" is what is stored in your form collected data whereas "Male" is what is shown /seen by the viewer -->
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="third">This doesn't exist lol</option>
+            </select>
+         </div>
+
+         <!-- creating radio based button - we use thes ewhen we want such that 1 of the options can be choosen  -->
+          <div>
+            <p>Subscription Plan Which You Would Like</p>
+            <input id="basic" type="radio" name="Subscription" value="Basic">
+            <label for="basic">Basic Plan</label>
+
+            <!-- so here since you set name="susbcription" and it is a radio type of form this means that it won't allow more choice of options to be selected at once. like if Basic is selected then preimum wont be selected -->
+
+             <input id="premium" type="radio" name="Subscription" value="Premium">
+            <label for="Premium">Premium Plan</label>
+
+            <!-- the main advantage of the "for" tag is that even if we click VIP Plan , the option gets selcted  -->
+             <input id="VIP" type="radio" name="Subscription" value="VIP">
+            <label for="VIP">VIP Plan</label>
+          </div>
+        
+          <!-- Submit Button  -->
+           <div>
+            <button type="submit">Submit Form</button>
+           </div>
+    </form>
+</body>
+</html>
